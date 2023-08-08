@@ -6,5 +6,6 @@ int main()
     printf("Sagrado Corazon");
     printf("H");
     printf("PC");
+    printf("PRUEBA POR FAVOR TRABAJO");
     return 0;
 }
