@@ -2,6 +2,9 @@
 
 void Opciones();
 void IngresarDatos();
+void MostrarDatos();
+void Promedio();
+void MaxyMin();
 int menu();
 #define T 10
 
@@ -13,7 +16,7 @@ int main()
    do
    {
     op = menu();
-    Opciones(op,array[T]);
+    Opciones(op,array);
    } while (op != 0);
 
    printf("\nFIN DEL PROGRAMA.");
@@ -24,7 +27,7 @@ int main()
 int menu()
 {
     int opcionElegida;
-    printf("Menu de opciones.\n");
+    printf("\nMenu de opciones.\n");
     printf("\n1- Agregar valores al array\n");
     printf("2- Mostrar los valores del array\n");
     printf("3- Calcular el promedio de los valores del array\n");
@@ -51,17 +54,68 @@ void Opciones(int op,int array[T])
     switch (op)
     {
     case 1:
-        IngresarDatos(array[T]);
+        IngresarDatos(array);
         break;
-    
+            case 2:
+                MostrarDatos(array);
+                break;
+                case 3:
+                    Promedio(array);
+                    break;
+                    case 4:
+                        MaxyMin(array);
+                        break;
     }
 }
 
 void IngresarDatos(int array[T])
 {
-    for (int i = 0; i <= T; i++)
+    for (int i = 0; i < T; i++)
         {
             printf("Ingrese un valor para la posicion %d del array: ",i + 1);
             scanf("%d",&array[i]);
         }
+        return;
+}
+
+void MostrarDatos(int array[T])
+{
+    for (int i = 0; i < T; i++)
+    {
+        printf("El valor numero %d es %d\n",i + 1, array[i]);
+    }
+    return;
+}
+
+void Promedio(int array[])
+{
+    int suma=0,promedio;
+
+    for (int i = 0; i < T; i++)
+    {
+        suma += array[i];
+    }
+    
+    promedio = suma / T;
+    printf("El promedio de los valores del array es de: %d",promedio);
+}
+
+void MaxyMin(int array[])
+{
+    int maximo = array[0];
+    int minimo = array[0];
+
+    for (int i = 0; i < T; i++)
+    {
+        if (array[i] > maximo)
+        {
+            maximo = array[i];
+        }
+        if (array[i] < minimo)
+        {
+            minimo = array[i];
+        }
+    }
+    printf("El valor maximo del array es de: %d\n",maximo);
+    printf("El valor minimo del array es de: %d",minimo);
 }
