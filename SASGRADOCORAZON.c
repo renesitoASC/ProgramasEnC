@@ -1,9 +1,8 @@
-#include <stdio.h>
+# include<stdio.h>
 
 int main()
 {
-    printf("HOLA MUNDO!");
     printf("ASC");
+    printf("Sagrado Corazon");
     return 0;
-    
 }
