@@ -2,3 +2,6 @@
 
 void Opciones();
 int menu();
+void IngresarDatos();
+
+/*OPR FAVOR QUE FUNCIONES*/
