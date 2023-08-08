@@ -2,3 +2,4 @@
 
 void Opciones();
 int menu();
+void IngresarDatos();
